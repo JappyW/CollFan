@@ -1,6 +1,7 @@
 import { auth } from "@/auth";
 import { Popover } from "@/components/Popover";
 import { NavBarLink } from "@/types";
+import { Diamond } from "lucide-react";
 import Link from "next/link";
 
 const NavBarContent = async ({ links }: { links: NavBarLink[] }) => {
@@ -27,6 +28,10 @@ const NavBarContent = async ({ links }: { links: NavBarLink[] }) => {
 export const NavBar = ({ navBarLinks }: { navBarLinks: NavBarLink[] }) => {
   return (
     <nav className="flex flex-wrap items-center justify-end p-4 bg-primary-foreground text-primary-content dark:text-primary-content-dark shadow-md shadow-primary/10">
+      <Link href="/" className="text-2xl font-bold mr-auto flex items-center gap-2">
+        <Diamond size={32} fill="cyan" color="#fff000" />
+        COOLLect
+      </Link>
       <div className="flex mr-8 sm:hidden">
         <Popover>
           <NavBarContent links={navBarLinks} />
