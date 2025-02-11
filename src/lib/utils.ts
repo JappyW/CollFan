@@ -6,9 +6,9 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const fetcher = (...args: [RequestInfo, RequestInit?]) => fetch(...args).then((res) => res.json());
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const addParamsToURL = (url: URL, queryParams?: Record<string, any>) => {
-  let URLWithParams = new URL(url);
+  const URLWithParams = new URL(url);
 
   if (queryParams != null) {
     Object.entries(queryParams).forEach(([key, value]) => {
@@ -35,6 +35,7 @@ export const pluralize = (word: string, numberOfItems: number, endWith?: string)
 };
 
 //can be changed to use any logging service in the future
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const logError = (text: string, error: Error, errorInfo?: any) => {
   console.error(text, error, errorInfo);
 };

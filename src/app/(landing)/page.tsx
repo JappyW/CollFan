@@ -1,5 +1,6 @@
 import { navBarLinks } from "@/constants";
 import { Quote } from "lucide-react";
+import Link from "next/link";
 
 export const LandingPage = () => {
   return (
@@ -8,32 +9,35 @@ export const LandingPage = () => {
         <nav className="py-10 w-full bg-gradient-to-b to-white from-blue-300 shadow-lg text-primary-foreground">
           <div className="flex items-center justify-between relative">
             <div className="pl-6 text-xl font-bold">
-              <a href="/" className="text-[var(--primary-color)] [font-family:var(--font-family-heading)] lg:text-3xl">
+              <Link
+                href="/"
+                className="text-[var(--primary-color)] [font-family:var(--font-family-heading)] lg:text-3xl"
+              >
                 <span>COOLLect</span>
-              </a>
+              </Link>
             </div>
 
             <div className="ml-auto mt-4 flex items-center justify-between bg-transparent">
               <ul className="flex flex-row max-sm:flex-col px-6 justify-end items-center gap-x-4">
                 <li className="p-2 ">
-                  <a href="/creators" className="px-4 py-2">
+                  <Link href="/creators" className="px-4 py-2">
                     Creators
-                  </a>
+                  </Link>
                 </li>
                 <li className="p-2 ">
-                  <a href="/games" className="px-4 py-2">
+                  <Link href="/games" className="px-4 py-2">
                     Games
-                  </a>
+                  </Link>
                 </li>
                 <li className="p-2 ">
-                  <a href="/login" className="px-4 py-2">
+                  <Link href="/login" className="px-4 py-2">
                     Log In
-                  </a>
+                  </Link>
                 </li>
                 <li className="p-2 ">
-                  <a href="/register" className="px-4 py-2">
+                  <Link href="/register" className="px-4 py-2">
                     Sign Up
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -60,12 +64,12 @@ export const LandingPage = () => {
                         experience.
                       </p>
                       <div className="mb-12 flex items-center justify-center lg:items-start lg:justify-start">
-                        <a
+                        <Link
                           href="/login"
                           className="items-center rounded bg-blue-400 px-4 py-2 text-lg font-semibold hover:bg-blue-500 text-primary-foreground"
                         >
                           Get Started
-                        </a>
+                        </Link>
                       </div>
                       <div className="flex items-center pb-10">
                         <img
@@ -190,12 +194,12 @@ export const LandingPage = () => {
                         <li>Maximize your Diamond usage for smart trading opportunities</li>
                       </ul>
                       <div className="flex justify-center lg:block">
-                        <a
+                        <Link
                           href="/diamonds"
                           className="mb-12 inline-block rounded bg-[var(--primary-button-bg-color)] px-[var(--button-padding-x)] py-[var(--button-padding-y)] text-lg font-medium text-[var(--primary-button-text-color)] hover:bg-[var(--primary-button-hover-bg-color)] hover:text-[var(--primary-button-hover-text-color)]"
                         >
                           Join COOLLect Now!
-                        </a>
+                        </Link>
                       </div>
                       <div className="flex items-center">
                         <img
@@ -246,12 +250,12 @@ export const LandingPage = () => {
                         <li>Master Your Diamond Usage for effective card trading</li>
                       </ul>
                       <div className="flex justify-center lg:block">
-                        <a
+                        <Link
                           href="/diamonds"
                           className="mb-12 inline-block rounded bg-[var(--primary-button-bg-color)] px-[var(--button-padding-x)] py-[var(--button-padding-y)] text-lg font-medium text-[var(--primary-button-text-color)] hover:bg-[var(--primary-button-hover-bg-color)] hover:text-[var(--primary-button-hover-text-color)]"
                         >
                           Join COOLLect Today!
-                        </a>
+                        </Link>
                       </div>
                       <div className="flex items-center">
                         <img
@@ -359,12 +363,12 @@ export const LandingPage = () => {
                       <p className="mb-9 text-lg font-light uppercase text-[var(--dark-text-color)]">
                         14 Day Free Trial
                       </p>
-                      <a
+                      <Link
                         href="/login"
                         className="mx-auto mb-11 block w-2/3 rounded border border-[var(--dark-border-color)] bg-primary py-4 font-semibold uppercase text-[var(--dark-text-color)]"
                       >
                         Select This Plan
-                      </a>
+                      </Link>
                       <ul className="space-y-3 font-light">
                         <li className="flex min-h-[28px] items-center">
                           <i
@@ -403,12 +407,12 @@ export const LandingPage = () => {
                       </p>
                       <p className="mb-3 text-6xl font-bold">$20</p>
                       <p className="mb-9 text-lg font-light uppercase">Monthly Subscription</p>
-                      <a
+                      <Link
                         href="/login"
                         className="mx-auto mb-11 block w-2/3 rounded border border-[var(--dark-border-color)] bg-primary py-4 font-semibold uppercase text-[var(--dark-text-color)]"
                       >
                         Select This Plan
-                      </a>
+                      </Link>
                       <ul className="space-y-3 font-light ">
                         <li className="flex min-h-[28px] items-center">
                           <i className="fa-regular fa-circle-check fa-xl ml-1 mr-4" aria-hidden="true"></i>
@@ -434,12 +438,12 @@ export const LandingPage = () => {
                       <p className="mb-9 text-lg font-light uppercase text-[var(--dark-text-color)]">
                         14 Day Free Trial
                       </p>
-                      <a
+                      <Link
                         href="/login"
                         className="mx-auto mb-11 block w-2/3 rounded border border-[var(--dark-border-color)] bg-primary py-4 font-semibold uppercase text-[var(--dark-text-color)]"
                       >
                         Select This Plan
-                      </a>
+                      </Link>
                       <ul className="space-y-3 font-light">
                         <li className="flex min-h-[28px] items-center">
                           <i
@@ -501,12 +505,12 @@ export const LandingPage = () => {
                           Integrate your gaming accounts with COOLLect for easy access to your achievements, stats, and
                           creator content, all in one convenient location.
                         </p>
-                        <a
+                        <Link
                           href="/creators"
                           className="flex items-center uppercase text-[var(--primary-color)] hover:underline"
                         >
                           Read More <i className="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="m-6 flex-1 rounded-3xl bg-card p-4 shadow-md shadow-[#cccccc7d] max-w-sm">
@@ -524,12 +528,12 @@ export const LandingPage = () => {
                           Customize your dashboard to receive real-time notifications about your favorite games,
                           creators, and exclusive offers on Diamonds, ensuring you stay ahead of the game.
                         </p>
-                        <a
+                        <Link
                           href="/diamonds"
                           className="flex items-center uppercase text-[var(--primary-color)] hover:underline"
                         >
                           Read More <i className="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <div className="m-6 flex-1 rounded-3xl bg-card p-4 shadow-md shadow-[#cccccc7d] max-w-sm">
@@ -547,12 +551,12 @@ export const LandingPage = () => {
                           Learn how to effectively utilize Diamonds to trade cards and open up new features within our
                           community. Our platform provides clear guidance to enhance your trading experience.
                         </p>
-                        <a
+                        <Link
                           href="/diamonds"
                           className="flex items-center uppercase text-[var(--primary-color)] hover:underline"
                         >
                           Read More <i className="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -583,12 +587,12 @@ export const LandingPage = () => {
                       trading and gameplay experience.
                     </p>
                     <div className="mb-12 flex items-center justify-center md:items-start md:justify-start text-primary-foreground">
-                      <a
+                      <Link
                         href="/login"
                         className="items-center rounded bg-blue-400 px-4 py-2 text-lg font-semibold hover:bg-blue-500"
                       >
                         Get Started
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -599,22 +603,22 @@ export const LandingPage = () => {
             <footer className="py-16 code-section" id="s384ld">
               <div className="container mx-auto px-4 text-center">
                 <div className="m-8 text-xl font-bold">
-                  <a
+                  <Link
                     href="/login"
                     className="text-3xl text-[var(--primary-color)] [font-family:var(--font-family-heading)]"
                   >
                     <span>COOLLect</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="mb-8 flex flex-col justify-center md:flex-row flex-wrap">
                   {navBarLinks.map((link) => (
-                    <a
+                    <Link
                       href={link.href}
                       key={link.href}
                       className="mx-8 text-lg text-[var(--gray-text-color)] hover:text-[var(--primary-color)]"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <p className="text-lg text-[var(--gray-text-color)]">© 2025 COOLLect All Rights Reserved</p>

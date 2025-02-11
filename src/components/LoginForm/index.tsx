@@ -38,6 +38,7 @@ export const LoginForm = () => {
       } else {
         router.push("/account");
       }
+      /* eslint-disable @typescript-eslint/no-explicit-any */
     } catch (e: any) {
       setError("Credentials are incorrect");
       console.error(e);

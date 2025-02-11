@@ -19,6 +19,7 @@ export function useLocalStorageState<T>(key: string, defaultValue: T): [T, (valu
     if (!isServer) {
       setStoredValue(initialize());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setValue = (value: T) => {

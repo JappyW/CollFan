@@ -61,12 +61,12 @@ export type Sreenshots = {
 
 export type Platforms = { platform: Platform; released_at: string; requirements: Requirements }[];
 
-export type Reactions = any;
+export type Reactions = Record<string, number>;
 
 export type GameDetailsType = Omit<Game, "metacritic"> & {
   name_original: string;
   description: string;
-  metacritic_platforms: {};
+  metacritic_platforms: Record<string, MetaCriticPlatforms>;
   background_image_additional: string;
   website: string;
   reactions: Record<string, Reactions>;

@@ -57,6 +57,7 @@ export async function passwordRegister(formData: FormData) {
 export async function fetchRAWGData(
   url: string,
   options?: RequestInit,
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   queryParams?: Record<string, any>
 ): Promise<Response> {
   const urlWithKey = new URL(url);
@@ -100,18 +101,11 @@ export async function fetchGameScreenshots(id: string, cache: RequestCache = DEF
   }
 }
 
-function sleeper(ms: number) {
-  return function (x: any) {
-    return new Promise((resolve) => setTimeout(() => resolve(x), ms));
-  };
-}
-
 export async function fetchCreators(
   cache: RequestCache = DEFAULT_CACHE_POLICY,
   pageSize = DEFAULT_PAGE_SIZE
 ): Promise<RAWGResponse<Creator> | undefined> {
   try {
-    sleeper(10000);
     const response = await fetchRAWGData(RAWG_CREATORS_API_URL, { cache }, { page_size: pageSize });
     return response.json();
   } catch (error) {

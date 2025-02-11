@@ -60,6 +60,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           }
 
           return user;
+          /* eslint-disable @typescript-eslint/no-explicit-any */
         } catch (error: any) {
           throw new Error(error);
         }
