@@ -16,6 +16,8 @@ export const DEFAULT_PAGE_SIZE = 10;
 export const MAX_DISPLAYED_BALANCE = 99999;
 export const MAX_DISPLAYED_DIAMONDS = 99999;
 
+export const MAX_DISPLAYED_PUBLISHERS = 2;
+
 export const TOAST_DURATION = 2000;
 
 export const DEFAULT_CACHE_POLICY = "force-cache";

@@ -14,16 +14,17 @@ export const DiamondList = ({ diamonds, email }: { diamonds: Diamond[]; email: s
     0
   );
 
-  const handleRemoveBalance = (price: number): boolean => {
+  const handleRemoveBalance = (price: number, cb: () => void) => {
     if (balance - price < 0) {
       toast.error("You don't have enough balance to buy this diamond");
-      return false;
+      return;
     }
 
     setBalance(balance - price);
     setDiamondsAmount(diamondsAmount + price);
+
     toast.success("Diamond bought successfully");
-    return true;
+    cb();
   };
 
   const handleAddBalance = (amount: number) => {

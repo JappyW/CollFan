@@ -7,7 +7,7 @@ export const CreatorCard = ({ creator }: { creator: Creator }) => {
   return (
     <Link href={`/creators/${creator.id}`} draggable="false">
       <div className="min-h-56 hover:shadow-md hover:shadow-slate-800/60 hover:bg-foreground/10 rounded-xl cursor-pointer hover_scale-image">
-        <Card className="overflow-clip max-w-72 max-h-72">
+        <Card className="overflow-clip max-w-72">
           <Image
             src={creator.image}
             alt={creator.name}

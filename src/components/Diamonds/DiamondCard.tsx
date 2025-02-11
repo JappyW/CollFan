@@ -11,7 +11,7 @@ export const DiamondCard = ({
   amount,
   url,
   removeBalance,
-}: Diamond & { removeBalance: (price: number) => boolean }) => {
+}: Diamond & { removeBalance: (price: number, cb: () => void) => void }) => {
   const [animate, setAnimate] = useState(false);
   const parsedAmount = parseIntWithFallback(amount);
 
@@ -31,10 +31,7 @@ export const DiamondCard = ({
       <Button
         className="mt-10 uppercase min-w-32"
         onClick={() => {
-          const result = removeBalance(parsedAmount);
-          if (result) {
-            setAnimate(true);
-          }
+          removeBalance(parsedAmount, () => setAnimate(true));
         }}
       >
         <div className={animate ? "hidden" : "flex justify-center items-center gap-2"}>

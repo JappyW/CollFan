@@ -2,6 +2,7 @@ import { Ratings } from "@/components/Rating";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { MAX_DISPLAYED_PUBLISHERS } from "@/constants";
 import { parseIntWithFallback, pluralize, shortDate } from "@/lib/utils";
 import { GameDetailsType, Sreenshots } from "@/types";
 import DOMPurify from "isomorphic-dompurify";
@@ -54,7 +55,7 @@ export const GameDetails = ({ game, screenshots }: { game: GameDetailsType; scre
 
               <div className="flex gap-4 text-sm">
                 <span className="opacity-50 min-w-24 uppercase">{pluralize("Publisher", game.publishers.length)}:</span>
-                {game.publishers.slice(0, 2).map((publisher) => (
+                {game.publishers.slice(0, MAX_DISPLAYED_PUBLISHERS).map((publisher) => (
                   <span key={publisher.id}>{publisher.name}</span>
                 ))}
               </div>
