@@ -1,11 +1,12 @@
-import { doSocialLogin } from "@/app/actions";
+import { googleLogin } from "@/app/actions";
+import { Button } from "@/components/ui/button";
 
 export const SocialLogins = () => {
   return (
-    <form action={doSocialLogin}>
-      <button className="bg-pink-400 text-white p-1 rounded-md m-1 text-lg" type="submit" name="action" value="google">
-        Sign In With Google
-      </button>
+    <form action={googleLogin}>
+      <Button type="submit" className="bg-white" name="action" value="google">
+        Google
+      </Button>
     </form>
   );
 };

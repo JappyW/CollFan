@@ -1,6 +1,26 @@
 import { User } from "next-auth";
 
 export type CustomUser = User & { password: string };
+export type NavBarLink = {
+  href: string;
+  name: string;
+  authedOnly?: boolean;
+  unathedOnly?: boolean;
+};
+
+export type Diamond = {
+  amount: number;
+  url: string;
+  mostPopular?: boolean;
+};
+
+export type BaseRAWGType = {
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  games_count: number;
+};
 
 export type RAWGResponse<T> = {
   count: number;
@@ -31,11 +51,19 @@ export type Requirements = {
   recommended: string;
 };
 
-export type Platoforms = { platform: Platform; released_at: string; requirements: Requirements };
+export type Sreenshots = {
+  id: number;
+  image: string;
+  width: number;
+  height: number;
+  is_deleted: boolean;
+};
+
+export type Platforms = { platform: Platform; released_at: string; requirements: Requirements }[];
 
 export type Reactions = any;
 
-export type GameDetails = Omit<Game, "metacritic"> & {
+export type GameDetailsType = Omit<Game, "metacritic"> & {
   name_original: string;
   description: string;
   metacritic_platforms: {};
@@ -59,6 +87,9 @@ export type GameDetails = Omit<Game, "metacritic"> & {
   parents_count: number;
   additions_count: number;
   game_series_count: number;
+  developers: Omit<Creator, "image">[];
+  publishers: Omit<Creator, "image">[];
+  genres: BaseRAWGType[];
 };
 
 export type Game = {
@@ -80,19 +111,14 @@ export type Game = {
   suggestions_count: number;
   updated: string;
   esrb_rating?: Record<string, number>;
-  platforms: Platoforms;
+  platforms: Platforms;
 };
 
-export type Creator = {
-  id: number;
-  name: string;
-  slug: string;
+export type Creator = BaseRAWGType & {
   image: string;
-  image_background: string;
-  games_count: number;
 };
 
-export type CreatorDetails = Creator & {
+export type CreatorDetailsType = Creator & {
   description: string;
   reviews_count: number;
   rating: string;

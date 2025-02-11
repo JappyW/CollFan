@@ -1,7 +1,37 @@
-import { getUserByEmail } from "@/constants";
+import { CustomUser } from "@/types";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+
+const users: CustomUser[] = [
+  {
+    id: "1",
+    email: "fanatic@gmail.com",
+    password: "hello_world",
+    name: "Fanatic",
+  },
+  {
+    id: "2",
+    email: "test@gmail.com",
+    password: "hello_world",
+    name: "Test User",
+  },
+  {
+    id: "3",
+    email: "bob@gmail.com",
+    password: "hello_world",
+    name: "Bob",
+  },
+];
+
+export const getUserByEmail = (email: string | undefined): CustomUser | undefined => {
+  const found = users.find((user) => user.email === email);
+  return found;
+};
+
+export const registerUserInDB = (user: CustomUser) => {
+  users.push({ ...user });
+};
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
   session: {
@@ -18,17 +48,18 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
 
         try {
           const user = getUserByEmail(credentials?.email as string);
-          if (user) {
-            const isMatch = user?.password === credentials?.password;
 
-            if (isMatch) {
-              return user;
-            } else {
-              throw new Error("Email or Password is not correct");
-            }
-          } else {
+          if (!user) {
             throw new Error("User not found");
           }
+
+          const isMatch = user?.password === credentials?.password;
+
+          if (!isMatch) {
+            throw new Error("Password is not correct");
+          }
+
+          return user;
         } catch (error: any) {
           throw new Error(error);
         }
